@@ -4,7 +4,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f5f7fa;
-  color: #1f2937;
+  color: #101b50;
 }
 
 
@@ -12,8 +12,12 @@ body {
 
 .app-layout {
   display: grid;
-  grid-template-columns: 280px 1fr 260px;
-  min-height: 100vh;
+  grid-template-columns:
+    clamp(240px, 18vw, 300px)
+    minmax(0, 1fr)
+    clamp(260px, 21vw, 350px);
+  height: 100vh;
+  height: 100dvh;
   background: white;
 }
 
@@ -26,7 +30,7 @@ body {
 /* ===== Panel izquierdo: proveedor ===== */
 
 .left-sidebar {
-  background: #f8fafc;
+  background: linear-gradient(180deg, #ffffff 0%, #eff7ff 100%);
   border-right: 1px solid #e5e7eb;
 }
 
@@ -72,6 +76,7 @@ body {
   flex-direction: column;
   gap: 24px;
   border-right: 1px solid #e5e7eb;
+  min-height: 0;
 }
 
 .chat-header h1 {
@@ -139,7 +144,7 @@ body {
 /* ===== Panel derecho: estado de la cotización ===== */
 
 .process-status {
-  background: #f8fafc;
+  background: linear-gradient(180deg, #ffffff 0%, #eff7ff 100%);
 }
 
 .process-status h2 {
@@ -184,6 +189,14 @@ body {
 /* Mensajes enviados por el proveedor */
 .message.user {
   margin-left: auto;
-  background: #2563eb;
-  color: white;
+  background: #deecff;
+  color: #101b50;
+}
+
+/* Tarjeta de las etapas de cotización */
+.status-card {
+  background: #ffffff;
+  border: 1px solid #e3edff;
+  border-radius: 16px;
+  padding: 24px 20px;
 }

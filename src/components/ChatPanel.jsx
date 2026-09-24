@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 
-function ChatPanel() {
+function ChatPanel({ onEtapaChange }) {
   const [message, setMessage] = useState('')
 
   const [sessionId] = useState(() => {
@@ -69,6 +69,9 @@ function ChatPanel() {
       )
 
       const data = await response.json()
+      if (data.etapa) {
+        onEtapaChange(data.etapa)
+      }
 
       setMessages((currentMessages) => [
         ...currentMessages,
