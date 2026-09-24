@@ -18,7 +18,7 @@ function ChatPanel({ onEtapaChange }) {
   const [messages, setMessages] = useState([
     {
       type: 'bot',
-      text: 'Hola, soy tu asistente de factoring.',
+      text: 'Hola, soy tu asistente virtual de IA especializado en el producto factoring.',
     },
     {
       type: 'bot',
@@ -102,7 +102,7 @@ function ChatPanel({ onEtapaChange }) {
             key={index}
             className={`message ${item.type}`}
           >
-            <ReactMarkdown>{item.text}</ReactMarkdown>
+            <ReactMarkdown>{item.text?.replace(/\\n/g, '\n')}</ReactMarkdown>
             {item.archivo && (
               <a href={`http://127.0.0.1:8000${item.archivo.url}`}>Descargar cotización PDF</a>
             )}

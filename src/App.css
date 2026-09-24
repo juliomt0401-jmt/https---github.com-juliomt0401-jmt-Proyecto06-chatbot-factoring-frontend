@@ -49,6 +49,35 @@ body {
 
 .provider-card h3 {
   margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.sidebar-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 13px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+
+.provider-card .claims-title {
+  margin-top: 16px;
 }
 
 .provider-card p {
@@ -59,7 +88,8 @@ body {
 .provider-card ul {
   margin: 0;
   padding-left: 20px;
-  line-height: 1.8;
+  line-height: 1.5;
+  color: #6b7280;
 }
 
 .provider-note {
