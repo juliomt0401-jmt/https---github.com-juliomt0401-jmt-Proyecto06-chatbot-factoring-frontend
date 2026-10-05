@@ -54,7 +54,8 @@ function ChatPanel({ onEtapaChange }) {
 
     try {
       const response = await fetch(
-        'http://127.0.0.1:8000/chat',
+        /*'http://127.0.0.1:8000/chat',*/
+        '/api/chat',
         {
           method: 'POST',
           headers: {
@@ -104,7 +105,8 @@ function ChatPanel({ onEtapaChange }) {
           >
             <ReactMarkdown>{item.text?.replace(/\\n/g, '\n')}</ReactMarkdown>
             {item.archivo && (
-              <a href={`http://127.0.0.1:8000${item.archivo.url}`}>Descargar cotización PDF</a>
+              /*<a href={`http://127.0.0.1:8000${item.archivo.url}`}>Descargar cotización PDF</a>*/
+              <a href={`/api${item.archivo.url}`}>Descargar cotización PDF</a>
             )}
           </div>
         ))}
