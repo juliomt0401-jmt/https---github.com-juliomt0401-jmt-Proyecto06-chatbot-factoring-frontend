@@ -8,7 +8,7 @@ function ChatPanel({ onEtapaChange }) {
     let id = sessionStorage.getItem('factoring_session_id')
 
     if (!id) {
-      id = crypto.randomUUID()
+      id = crypto.randomUUID?.() ?? `session-${Date.now()}-${Math.random().toString(36).slice(2)}`
       sessionStorage.setItem('factoring_session_id', id)
     }
 
